@@ -8,7 +8,7 @@ Updated to v.0.2 | Whats new:
 
 **ToDo**
 
-- [ ] Implementation of multi-threating
+- [ ] Implementation of multithreading
 - [ ] Allowing a range of years as input
 - [ ] Implementing `direct-grep`
 - [ ] Temporary file-writing 
