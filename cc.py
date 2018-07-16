@@ -12,6 +12,7 @@ import os
 import argparse
 import requests
 
+
 def main():
     domain, outfile, index_used = getArguments()
 
@@ -35,10 +36,10 @@ def main():
             print(e)
 
     print("\033[32m[i] Finished all requests \033[0m")
-    print("Found {} lines in responses".format(len(ccEntries)))
 
     print("Extracting links...")
     links = extractLinksFromCC(ccEntries)
+    print("Found {} lines in responses".format(len(links)))
 
     print("Writing links to {}".format(outfile))
     writeResults(links, outfile)
@@ -54,14 +55,14 @@ def writeResults(links, outfile):
 
 def extractLinksFromCC(ccEntries):
     links = []
+
     for entry in ccEntries:
         for link in entry:
             link = json.loads(link)["url"]
+            link = link.strip()
+            links.append(link + "\n")
 
-            if link not in links:
-                links.append(link + "\n")
-
-    return links
+    return list(set(links))
 
 
 def getCCResponse(url):
@@ -75,7 +76,6 @@ def makeCCUrl(domain, index):
 
 
 def filterIndices(index_used, indices):
-
     if index_used is not None:
         indices = intersectLists(indices, index_used)
 
