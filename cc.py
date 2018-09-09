@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import requests, json
+import requests, json, os
 import argparse
 
 parser = argparse.ArgumentParser()
@@ -100,7 +100,8 @@ else:
 
 if out:
 	if args.out:
-		result = open('./' + args.out, 'w')
+		path = os.path.abspath(args.out)
+		result = open(path, 'w')
 		output = str(args.out)
 	else:
 		result = open('./' + args.domain + '.txt', 'w')
