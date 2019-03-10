@@ -70,7 +70,7 @@ def crawlIndex(domain, index):
 		print('[!] Error reading index')
 		pass
 
-def readIndexFile(index_filename="index.txt"):
+def readIndexFile(index_filename=os.path.join(os.path.dirname(os.path.abspath(__file__)), "index.txt")):
 	global indexes
 	#check when the index file was last updated
 	path = pathlib.Path(index_filename)
