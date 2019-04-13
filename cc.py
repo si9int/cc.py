@@ -81,7 +81,7 @@ def readIndexFile(index_filename=os.path.join(os.path.dirname(os.path.abspath(__
 		indexes = f.read().split('\n')[:-1]
 
 def updateIndexFile():
-	with open("index.txt", "w") as f:
+	with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "index.txt"), "w") as f:
 		url = "https://index.commoncrawl.org/collinfo.json"
 		data = requests.get(url).text
 		raw_indexes = json.loads(data)
