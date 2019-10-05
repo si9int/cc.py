@@ -45,14 +45,14 @@ def crawlAll():
 		getData(index, '')
 
 #
-def crawlSpecific(year):
+def crawlSpecific(domain, year):
 	#index = indexes.get('y' + year)
 	print('[!] Processing year: ' + year)
 
 	for index in indexes:
 		if year in index:
 			print('[-] ' + index)
-			getData(index, '')
+			crawlIndex(domain, index)
 
 
 def crawlIndex(domain, index):
@@ -104,7 +104,7 @@ else:
 	if args.index:
 		crawlIndex(args.domain, args.index)
 	elif args.year:
-		crawlSpecific(args.year)
+		crawlSpecific(args.domain, args.year)
 	else:
 		crawlAll()
 
