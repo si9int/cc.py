@@ -12,10 +12,10 @@ Updated to v.0.3 | Whats new:
 **ToDo**
 
 - [x] Crawl for a specific index
-- [ ] Implementation of multithreading
-- [ ] Allowing a range of years as input
+- [x] Implementation of multithreading
+- [x] Allowing a range of years as input
 - [ ] Implementing `direct-grep`
-- [ ] Temporary file-writing 
+- [x] Temporary file-writing 
 
 **Usage**
 ```
@@ -44,3 +44,5 @@ cat github_18.txt | grep user
 
 **Dependencies**
 * Python3
+
+> This is a fork from the main repository, i just added some missing features
